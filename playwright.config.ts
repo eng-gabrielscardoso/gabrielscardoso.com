@@ -14,6 +14,13 @@ export default defineConfig<ConfigOptions>({
     trace: 'on-first-retry',
     nuxt: {
       rootDir: fileURLToPath(new URL('.', import.meta.url)),
+      // In CI we build once and start a single preview server (see ci.yml),
+      // then point tests at it instead of letting @nuxt/test-utils rebuild
+      // and boot a fresh Nuxt instance per test. Its internal "_nuxtHooks"
+      // fixture has a hardcoded 60s setup timeout that a cold build/start
+      // routinely exceeds on CI runners, failing every test with
+      // `Fixture "_nuxtHooks" timeout of 60000ms exceeded during setup.`
+      ...(process.env.NUXT_E2E_HOST ? { host: process.env.NUXT_E2E_HOST } : {}),
     },
   },
   projects: [

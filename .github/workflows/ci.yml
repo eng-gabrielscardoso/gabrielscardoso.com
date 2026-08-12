@@ -23,5 +23,25 @@ jobs:
       - run: npx playwright install chromium --with-deps
       - run: npm run test:nuxt
       - run: npm run test:runtime
-      - run: npm run test:e2e
+
+      # Build once and serve it for the whole e2e run instead of letting
+      # @nuxt/test-utils build and boot a fresh Nuxt instance per test — its
+      # "_nuxtHooks" fixture has a hardcoded 60s setup timeout that a cold
+      # build routinely exceeds on CI runners, failing every test.
       - run: npm run build
+      - name: Start preview server
+        run: |
+          node .output/server/index.mjs &
+          echo $! > preview.pid
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:3000/ > /dev/null && exit 0
+            sleep 2
+          done
+          echo "Preview server did not become ready in time" >&2
+          exit 1
+      - run: npm run test:e2e
+        env:
+          NUXT_E2E_HOST: http://localhost:3000
+      - name: Stop preview server
+        if: always()
+        run: kill "$(cat preview.pid)" 2>/dev/null || true
