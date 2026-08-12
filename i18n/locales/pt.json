@@ -1,0 +1,94 @@
+{
+  "site": {
+    "role": "Engenheiro de Software"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "blog": "Blog",
+    "contact": "Contato",
+    "coverLetter": "Carta de apresentação",
+    "cv": "Currículo",
+    "github": "Repositório GitHub",
+    "menu": "Menu de navegação"
+  },
+  "home": {
+    "greeting": "Olá",
+    "iam": "Eu sou",
+    "role": "Engenheiro de Software.",
+    "locationPrefix": "Atualmente sobrevivendo em",
+    "cta": "Vamos conversar!",
+    "skillsTitle": "Habilidades e Interesses",
+    "featuredProjects": "Projetos em Destaque",
+    "viewAllProjects": "Ver todos os projetos",
+    "lastPublications": "Últimas publicações",
+    "viewAllPosts": "Ver todos os posts"
+  },
+  "about": {
+    "title": "Sobre",
+    "biography": "Biografia",
+    "experience": "Experiência",
+    "education": "Educação",
+    "volunteering": "Voluntariado",
+    "present": "Atual"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Uma seleção de trabalhos que construí e aos quais contribuí.",
+    "total": "Total de projetos",
+    "active": "Projetos ativos",
+    "viewProject": "Ver projeto",
+    "readMore": "Saiba mais"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflexões sobre software, tecnologia, a vida, a humanidade e outras coisas inúteis.",
+    "readMore": "Ler artigo",
+    "backToBlog": "Voltar ao blog"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Tens alguma pergunta ou quer trabalhar junto? Envia uma mensagem.",
+    "name": "Nome",
+    "email": "E-mail",
+    "subject": "Assunto",
+    "message": "Mensagem",
+    "placeholders": {
+      "name": "John Doe",
+      "subject": "Re: aquele TODO de 2019",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+    },
+    "send": "Enviar mensagem",
+    "formTitle": "Formulário de contato",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Responderei brevemente.",
+    "error": "Falha ao enviar mensagem. Tenta novamente mais tarde.",
+    "rateLimit": "Podes enviar uma mensagem por hora (o orçamento é limitado). Tenta novamente mais tarde."
+  },
+  "support": {
+    "button": "Paga-me um açaí",
+    "title": "Capitalismo, versão tropical",
+    "intro1": "Sim, açaí — o ouro roxo do Pará que o gringo descobriu ontem e já vende como exótico. Preferi a \"paga-me um café\" porque ao menos ninguém finge que é uma cópia barata (talvez quem sabe menos brega).",
+    "intro2": "Sou brasileiro (infelizmente). Tradução: programo numa moeda que desvaloriza se respirares, num país onde político trata verba pública como mesada, numa economia mantida com fita isolante e negação coletiva. Não programo por brincadeira (as vezes sim) — é o que paga minhas contas.",
+    "intro3": "Se meu trabalho já te poupou tempo, bug ou sessão de terapia, manda cripto aí embaixo. Sem pressão — diferente de praticamente tudo na vida adulta.",
+    "bitcoinDesc": "O bom e velho BTC. Uma das últimas formas de mover valor sem pedir benção a banco — aquelas instituições lindas administradas por gente que venderia os próprios filhos por mais um zero na conta.",
+    "ethereumDesc": "Ethereum: abriu portas para mil apps \"revolucionários\" que revolucionaram sobretudo a velocidade com que perdes dinheiro. Ainda assim, melhor que ver o real apodrecer na poupança.",
+    "copyAddress": "Copiar endereço",
+    "copied": "Copiado!"
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados.",
+    "builtWith": "Feito com Nuxt"
+  },
+  "error": {
+    "notFound": "Página não encontrada",
+    "notFoundDesc": "A página que procuras não existe ou foi movida.",
+    "serverError": "Algo deu errado",
+    "serverErrorDesc": "Estamos (eu, Gabriel Santos Cardoso) com dificuldades técnicas. Tente novamente mais tarde. Se o problema persistir, contate-me.",
+    "goHome": "Voltar ao início"
+  },
+  "locale": {
+    "switch": "Idioma"
+  }
+}

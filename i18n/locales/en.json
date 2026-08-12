@@ -1,0 +1,94 @@
+{
+  "site": {
+    "role": "Software Engineer"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "coverLetter": "Cover letter",
+    "cv": "Curriculum vitae",
+    "github": "GitHub repository",
+    "menu": "Navigation menu"
+  },
+  "home": {
+    "greeting": "Hello",
+    "iam": "I'm",
+    "role": "Software Engineer.",
+    "locationPrefix": "Currently surviving in",
+    "cta": "Let's get in touch!",
+    "skillsTitle": "Skills & Interests",
+    "featuredProjects": "Featured Projects",
+    "viewAllProjects": "View all projects",
+    "lastPublications": "Last publications",
+    "viewAllPosts": "View all posts"
+  },
+  "about": {
+    "title": "About",
+    "biography": "Biography",
+    "experience": "Experience",
+    "education": "Education",
+    "volunteering": "Volunteering",
+    "present": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of work I've built and contributed to.",
+    "total": "Total projects",
+    "active": "Active projects",
+    "viewProject": "View project",
+    "readMore": "Read more"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Reflections on software, technology, life, humanity, and other things.",
+    "readMore": "Read article",
+    "backToBlog": "Back to blog"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a question or want to work together? Send a message.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "placeholders": {
+      "name": "John Doe",
+      "subject": "Re: that TODO from 2019",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+    },
+    "send": "Send message",
+    "formTitle": "Contact form",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "Failed to send message. Please try again later.",
+    "rateLimit": "You can only send one message per hour (the budget is limited). Please try again later."
+  },
+  "support": {
+    "button": "Buy me an açaí",
+    "title": "Capitalism, but make it tropical",
+    "intro1": "Yes, açaí — the purple gold of Pará that foreigners discovered yesterday and now sell as exotic. I chose it over \"buy me a coffee\" because at least nobody pretends it's a cheap knock-off (perhaps tacky, who knows).",
+    "intro2": "I'm Brazilian (unfortunately). Translation: I write code in a currency that devalues if you breathe, in a country where politicians treat public funds like pocket money, in an economy held together with duct tape and collective denial. I don't code for fun (sometimes I do) — it's what pays my bills.",
+    "intro3": "If my work ever saved you time, a bug, or a therapy session, feel free to send crypto below. No pressure — unlike literally everything else in adult life.",
+    "bitcoinDesc": "Good old BTC. One of the last ways to move value without asking a bank for permission — those lovely institutions run by people who'd sell their own children for another zero on the balance sheet.",
+    "ethereumDesc": "Ethereum: opened the door to a thousand \"revolutionary\" apps that mostly revolutionised how fast you can lose money. Still beats watching your money rot in a savings account, though.",
+    "copyAddress": "Copy address",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with Nuxt"
+  },
+  "error": {
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
+    "serverError": "Something went wrong",
+    "serverErrorDesc": "We're experiencing technical difficulties. Please try again later.",
+    "goHome": "Go back home"
+  },
+  "locale": {
+    "switch": "Language"
+  }
+}
