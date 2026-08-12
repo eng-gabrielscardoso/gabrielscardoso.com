@@ -1,0 +1,124 @@
+/**
+ * Icons referenced dynamically (e.g. skill logos from content) must be listed here for the client bundle.
+ * Skill icons use the Iconify `logos` collection — search slugs at https://icones.js.org/collection/logos
+ */
+export const skillLogoIcons = [
+  // Languages
+  'logos:javascript',
+  'logos:typescript',
+  'logos:typescript-icon',
+  'logos:python',
+  'logos:go',
+  'logos:rust',
+  'logos:ruby',
+  'logos:java',
+  'logos:kotlin',
+  'logos:swift',
+  'logos:php',
+  'logos:dotnet',
+
+  // Frontend
+  'logos:html-5',
+  'logos:css',
+  'logos:css-3',
+  'logos:sass',
+  'logos:tailwindcss',
+  'logos:vue',
+  'logos:nuxt',
+  'logos:nuxt-icon',
+  'logos:react',
+  'logos:nextjs',
+  'logos:angular',
+  'logos:svelte',
+  'logos:astro',
+
+  // Backend & frameworks
+  'logos:nodejs',
+  'logos:nodejs-icon',
+  'logos:express',
+  'logos:nestjs',
+  'logos:fastify',
+  'logos:laravel',
+  'logos:symfony',
+  'logos:django',
+  'logos:flask',
+  'logos:gin',
+  'logos:rails',
+  'logos:spring',
+
+  // Data & APIs
+  'logos:postgresql',
+  'logos:mysql',
+  'logos:mongodb',
+  'logos:redis',
+  'logos:prisma',
+  'logos:supabase',
+  'logos:firebase',
+  'logos:graphql',
+
+  // Tooling & build
+  'logos:vitejs',
+  'logos:webpack',
+  'logos:eslint',
+  'logos:prettier',
+  'logos:jest',
+  'logos:vitest',
+  'logos:playwright',
+  'logos:cypress',
+  'logos:npm',
+  'logos:yarn',
+  'logos:pnpm',
+  'logos:bun',
+
+  // DevOps & cloud
+  'logos:docker',
+  'logos:kubernetes',
+  'logos:git',
+  'logos:github',
+  'logos:gitlab',
+  'logos:github-actions',
+  'logos:nginx',
+  'logos:vercel',
+  'logos:netlify',
+  'logos:cloudflare',
+  'logos:aws',
+  'logos:azure',
+  'logos:google-cloud',
+  'logos:terraform',
+  'logos:ansible',
+  'logos:jenkins',
+  'logos:ubuntu',
+  'logos:debian',
+
+  // Blockchain
+  'logos:solidity',
+  'logos:hardhat',
+  'logos:hardhat-icon',
+
+  // Design & CMS
+  'logos:figma',
+  'logos:wordpress',
+] as const
+
+export const appIcons = [
+  'lucide:house',
+  'lucide:user',
+  'lucide:folder-kanban',
+  'lucide:newspaper',
+  'lucide:mail',
+  'lucide:file-text',
+  'lucide:id-card',
+  'lucide:menu',
+  'lucide:languages',
+  'lucide:github',
+  'lucide:linkedin',
+  'lucide:instagram',
+  'lucide:message-square',
+  'lucide:pencil-line',
+  'lucide:external-link',
+  'lucide:arrow-left',
+  'lucide:bitcoin',
+  'lucide:hexagon',
+  'lucide:coins',
+  ...skillLogoIcons,
+] as const
