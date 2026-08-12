@@ -4,6 +4,11 @@ import { defineVitestProject } from '@nuxt/test-utils/config'
 import { playwright } from '@vitest/browser-playwright'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '#shared': fileURLToPath(new URL('./shared', import.meta.url)),
+    },
+  },
   test: {
     projects: [
       {
@@ -11,6 +16,11 @@ export default defineConfig({
           name: 'unit',
           include: ['test/unit/*.{test,spec}.ts'],
           environment: 'node',
+        },
+        resolve: {
+          alias: {
+            '#shared': fileURLToPath(new URL('./shared', import.meta.url)),
+          },
         },
       },
       await defineVitestProject({
@@ -26,12 +36,22 @@ export default defineConfig({
           browser: {
             enabled: true,
             provider: playwright(),
-            instances: [
-              { browser: 'chromium' },
-            ],
+            instances: [{ browser: 'chromium' }],
           },
         },
       }),
+      {
+        test: {
+          name: 'runtime',
+          include: ['test/runtime/*.{test,spec}.ts'],
+          environment: 'node',
+        },
+        resolve: {
+          alias: {
+            '#shared': fileURLToPath(new URL('./shared', import.meta.url)),
+          },
+        },
+      },
     ],
     coverage: {
       enabled: true,
