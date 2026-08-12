@@ -1,5 +1,7 @@
 import { defineCollection, defineContentConfig } from '@nuxt/content'
-import type { ZodTypeAny } from 'zod'
+import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
+import { z } from 'zod'
+import type { ZodObject, ZodRawShape, ZodTypeAny } from 'zod'
 import {
   blogSchema,
   educationSchema,
@@ -16,7 +18,11 @@ import {
  */
 const excludedSources = ['**/_*', '**/.gitkeep']
 
-function defineLocaleCollections(name: string, type: 'page' | 'data', schema: ZodTypeAny) {
+function defineLocaleCollections(name: string, type: 'page' | 'data', schema: ZodObject<ZodRawShape>) {
+  // The `sitemap` schema field is what registers a page collection with @nuxtjs/sitemap.
+  const collectionSchema =
+    type === 'page' ? schema.extend({ sitemap: defineSitemapSchema({ z }) }) : schema
+
   return {
     [`${name}_en`]: defineCollection({
       type,
@@ -25,7 +31,7 @@ function defineLocaleCollections(name: string, type: 'page' | 'data', schema: Zo
         exclude: excludedSources,
         prefix: type === 'page' ? `/${name === 'blog' ? 'blog' : 'projects'}` : undefined,
       },
-      schema,
+      schema: collectionSchema,
     }),
     [`${name}_pt`]: defineCollection({
       type,
@@ -34,7 +40,7 @@ function defineLocaleCollections(name: string, type: 'page' | 'data', schema: Zo
         exclude: excludedSources,
         prefix: type === 'page' ? `/pt/${name === 'blog' ? 'blog' : 'projects'}` : undefined,
       },
-      schema,
+      schema: collectionSchema,
     }),
   }
 }

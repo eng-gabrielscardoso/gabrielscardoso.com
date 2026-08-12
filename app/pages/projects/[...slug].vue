@@ -18,10 +18,29 @@ if (!project.value) {
   throw createError({ statusCode: 404, statusMessage: 'Project not found' })
 }
 
+const siteUrl = useRuntimeConfig().public.siteUrl
+
 useSeoMeta({
   title: project.value.title,
   description: project.value.description?.slice(0, 160),
+  ...(project.value.image && {
+    ogImage: new URL(project.value.image, siteUrl).href,
+    // Dimensions are unknown per project, so drop the site-wide 1200x630 hints.
+    ogImageWidth: undefined,
+    ogImageHeight: undefined,
+    ogImageAlt: project.value.title,
+  }),
 })
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      { name: t('nav.home'), item: localePath('/') },
+      { name: t('projects.title'), item: localePath('/projects') },
+      { name: project.value.title },
+    ],
+  }),
+])
 </script>
 
 <template>

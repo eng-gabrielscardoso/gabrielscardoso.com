@@ -50,8 +50,8 @@ export const siteConfig = {
   /** i18n key for the job title shown in the footer. */
   roleKey: 'site.role',
   description: 'The Gabriel Santos Cardoso personal web portfolio.',
-  /** Overridable at deploy time with `NUXT_PUBLIC_SITE_URL`. */
-  url: 'https://gabrielscardoso.com',
+  /** Overridable at deploy time with `NUXT_PUBLIC_SITE_URL`. Must match the production domain (Vercel serves `www`, the apex 308-redirects to it). */
+  url: 'https://www.gabrielscardoso.com',
 
   /**
    * Avatar is served by Gravatar. Generate the hash with:

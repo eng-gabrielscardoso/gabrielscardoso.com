@@ -18,7 +18,26 @@ if (!post.value) {
 useSeoMeta({
   title: post.value.title,
   description: post.value.description,
+  ogType: 'article',
+  articlePublishedTime: new Date(post.value.date).toISOString(),
+  articleTag: post.value.tags,
 })
+
+useSchemaOrg([
+  defineArticle({
+    headline: post.value.title,
+    description: post.value.description,
+    datePublished: new Date(post.value.date).toISOString(),
+    keywords: post.value.tags,
+  }),
+  defineBreadcrumb({
+    itemListElement: [
+      { name: t('nav.home'), item: localePath('/') },
+      { name: t('blog.title'), item: localePath('/blog') },
+      { name: post.value.title },
+    ],
+  }),
+])
 </script>
 
 <template>
@@ -35,7 +54,7 @@ useSeoMeta({
       </UButton>
 
       <header class="mb-8">
-        <time class="text-sm text-neutral-500">{{ post.date }}</time>
+        <time :datetime="post.date" class="text-sm text-neutral-500">{{ post.date }}</time>
         <h1 class="mt-2 text-4xl font-bold text-neutral-100">{{ post.title }}</h1>
         <p class="mt-4 text-lg text-neutral-400">{{ post.description }}</p>
         <div v-if="post.tags?.length" class="mt-4 flex flex-wrap gap-2">

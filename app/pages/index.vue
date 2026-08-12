@@ -5,7 +5,7 @@ const profile = await useProfile()
 const skills =
   (await useContentItems<{ name: string; description: string; icons: string[] }>('skills')) ?? []
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const localePath = useLocalePath()
 
 const { data: localizedProjects } = await useAsyncData(
@@ -29,7 +29,7 @@ const { data: latestPosts } = await useAsyncData(
 )
 
 useSeoMeta({
-  title: 'Welcome',
+  title: t('site.role'),
   description: profile?.headline || siteConfig.description,
 })
 </script>

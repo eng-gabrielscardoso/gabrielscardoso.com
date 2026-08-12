@@ -2,6 +2,7 @@
 import { fileURLToPath } from 'node:url'
 import { appIcons } from './shared/icons'
 import { siteConfig } from './shared/site.config'
+import { gravatarUrl } from './shared/utils'
 
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || siteConfig.url
 
@@ -12,7 +13,12 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/png', href: '/favicon.png', sizes: '96x96' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' },
+      ],
+      meta: [{ name: 'theme-color', content: '#0a0a0a' }],
     },
   },
 
@@ -63,6 +69,21 @@ export default defineNuxtConfig({
     name: siteConfig.name,
     description: siteConfig.description,
     defaultLocale: 'en',
+  },
+
+  robots: {
+    // Keep the CMS and API endpoints out of search results.
+    disallow: ['/_studio', '/api'],
+  },
+
+  schemaOrg: {
+    identity: {
+      type: 'Person',
+      name: siteConfig.name,
+      url: siteUrl,
+      image: gravatarUrl(siteConfig.avatar.gravatarHash, 512),
+      sameAs: siteConfig.socials.map((social) => social.href),
+    },
   },
 
   i18n: {
