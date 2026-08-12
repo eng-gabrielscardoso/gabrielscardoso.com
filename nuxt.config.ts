@@ -33,6 +33,15 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  content: {
+    experimental: {
+      // better-sqlite3 fails to load its native binding on Vercel's
+      // serverless runtime ("Module did not self-register"), so use the
+      // Node.js built-in node:sqlite (requires Node >= 22.5).
+      sqliteConnector: 'native',
+    },
+  },
+
   icon: {
     serverBundle: {
       collections: ['lucide', 'logos'],
