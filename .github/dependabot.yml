@@ -1,0 +1,36 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      nuxt:
+        patterns:
+          - nuxt
+          - '@nuxt/*'
+      nuxt-modules:
+        patterns:
+          - '@nuxtjs/*'
+          - nuxt-studio
+      tiptap:
+        patterns:
+          - '@tiptap/*'
+      testing:
+        patterns:
+          - vitest
+          - '@vitest/*'
+          - '@playwright/*'
+          - playwright-core
+          - '@axe-core/*'
+          - '@vue/test-utils'
+          - happy-dom
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
