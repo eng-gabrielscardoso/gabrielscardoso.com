@@ -1,6 +1,14 @@
+<script setup lang="ts">
+const toaster = {
+  label: 'Site notifications ({hotkey})',
+}
+</script>
+
 <template>
-  <div>
+  <UApp :toaster="toaster">
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
 </template>
