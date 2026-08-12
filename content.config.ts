@@ -18,7 +18,11 @@ import {
  */
 const excludedSources = ['**/_*', '**/.gitkeep']
 
-function defineLocaleCollections(name: string, type: 'page' | 'data', schema: ZodObject<ZodRawShape>) {
+function defineLocaleCollections(
+  name: string,
+  type: 'page' | 'data',
+  schema: ZodObject<ZodRawShape>,
+) {
   // The `sitemap` schema field is what registers a page collection with @nuxtjs/sitemap.
   const collectionSchema =
     type === 'page' ? schema.extend({ sitemap: defineSitemapSchema({ z }) }) : schema
