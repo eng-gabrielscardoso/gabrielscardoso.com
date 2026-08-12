@@ -1,0 +1,20 @@
+title: Mid-Level Software Engineer
+
+company: Fone Ninja
+
+employmentType: contract
+
+location: Remote — Brazil
+
+description: |-
+  - I have worked with a comprehensive range of technologies, including HTML, CSS, JavaScript, TypeScript, Vue.js, Pinia, Vite, PrimeVue, PrimeFaces, PrimeFlex, TailwindCSS, Laravel, PHP, Docker, MySQL, NGINX, Redis, and Spatie packages. Additionally, I have utilised AWS services such as EC2, RDS, SES, CloudWatch, and SNS.
+  - I was responsible for developing the payments and subscriptions module, integrating Stripe as the payment gateway and enabling customisation of Fone Ninja's subscription plans, providing greater flexibility for customers to tailor plans to their needs.
+  - I contributed to the implementation of new features and enhancements across various modules, including Technical Assistance, Sales, Purchases, Dashboard, Configuration, and Reports.
+  - I took on the leadership of the Technical Assistance module, acting both as a developer and Product Owner. I was involved in technical decision-making, product leadership, and strategic meetings with clients, stakeholders, partners, and fellow developers.
+  - I implemented key features within the Technical Assistance module, such as improvements to Work Orders, management of Services provided by stores, the creation of electronic checklists, and the development of a customisable Kanban board to enhance Work Order visualisation.
+  - I led the UI/UX refactoring of critical pages, including Purchases, Sales, Products, and Dashboard, as well as performance optimisations to improve the overall user experience.
+  - I developed integrations with third-party services, including Stripe (payments), PlugSign (electronic signatures), ClickUp, and various CMS tools, streamlining the integration of services used by clients.
+
+startDate: '2024-05'
+
+endDate: '2025-04'

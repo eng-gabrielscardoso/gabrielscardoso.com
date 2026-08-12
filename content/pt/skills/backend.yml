@@ -1,0 +1,14 @@
+name: Backend
+
+description: Meu foco principal é desenvolvimento backend, com forte ênfase em performance e escalabilidade.
+
+icons:
+  - go
+  - typescript-icon
+  - nodejs-icon
+  - nestjs
+  - php
+  - laravel
+  - symfony
+
+translated: true

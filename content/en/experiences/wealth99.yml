@@ -1,0 +1,21 @@
+title: Full Stack Developer
+
+company: Wealth99
+
+employmentType: contract
+
+location: Remote — Australia
+
+description: |-
+  - I have worked with a broad range of technologies, including HTML, CSS, TypeScript, Vue.js, Vuex, Pinia, Vite, Webpack, Node.js, TailwindCSS, PHP, Laravel, Laravel Nova, Docker, MySQL, MongoDB, Redis, Ambientum, PHPUnit, and Kahlan. Additionally, I worked with self-hosted nodes for cryptocurrency transactions, such as Ethereum Geth, Bitcoin, Litecoin, and Bitcoin Cash, among others.
+  - I developed new features for the application, including financial charts, enhancements to the transaction history page, improvements to the buy and sell asset interface, and the creation of an interactive dashboard for the client's portfolio.
+  - I was actively involved in the rebranding of the Whitelabel application, leading improvements to the architecture and user experience. I also led the migration from Vue.js 2 to Vue.js 3, replaced Webpack with Vite, and integrated TypeScript into the project.
+  - Later, I joined the development and maintenance team for the REST API, focusing on performance improvements to optimise operations with customer wallets and the asynchronous processing of service orders in the NoSQL MongoDB database, resulting in a significant increase in transaction speed.
+  - I worked on the integration of ERC20 tokens such as BAT, NEAR, EOS, MKR, SAND, ALGO, and UNI, using both the internal API and the tokens' API on Etherscan.
+  - I integrated and maintained external services and CMSs, including Mixpanel, HubSpot, CoinMarketCap, and CoinGecko, for monitoring metrics and querying digital asset prices.
+  - I developed unit, integration, and end-to-end (E2E) tests with high coverage for both the web application and the API, ensuring greater system reliability. Additionally, I extensively documented the services to facilitate the onboarding of new developers.
+  - I led technical workshops on new technologies and participated in technical discussions and audits involving smart contract development with Solidity and transactions of the DACXI token using Remix IDE.
+
+startDate: '2022-04'
+
+endDate: '2024-04'

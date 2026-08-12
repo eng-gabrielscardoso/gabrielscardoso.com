@@ -1,0 +1,17 @@
+title: Mid-Level Full Stack Developer
+
+company: DefSafe
+
+employmentType: contract
+
+location: Remote — United States
+
+description: |-
+  - I have worked with a broad range of technologies, including HTML, CSS, JavaScript, TypeScript, Vue.js, Pinia, Vite, Node.js, TailwindCSS, Nitro.js, Prisma, Supabase, PostgreSQL, and various AWS services such as SES, Lambda, Amplify, Cognito, and CloudWatch.
+  - I developed new features and implemented fixes in the core application, working closely with the Quality Assurance team to ensure stability and performance. I optimised the application using Pinia, improved component rendering through NuxtJS rendering modes, and actively contributed to technical discussions.
+  - I implemented social authentication via AWS Cognito, integrating OIDC providers such as Google, LinkedIn, and Microsoft Azure (Outlook), delivering a smoother and more secure login experience for users.
+  - I developed corporate Single Sign-On (SSO) authentication using the SAML protocol, enabling integration with Google Workspaces and Microsoft Entra ID (formerly Azure AD) to facilitate enterprise logins and ensure compliance with security standards.
+
+startDate: '2024-03'
+
+endDate: '2024-05'

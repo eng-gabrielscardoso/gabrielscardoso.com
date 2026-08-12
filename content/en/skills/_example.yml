@@ -1,0 +1,21 @@
+# Template — copy it, rename it (e.g. `frontend.yml`) and fill it in.
+# Files starting with `_` are never indexed, so this file never reaches the site.
+# Create the matching file in `content/pt/skills/` using the SAME filename.
+#
+# Rendered as a card in the "Skills & Interests" section on the home page.
+
+# Group name shown as the card title.
+name: Frontend
+
+# One or two sentences describing the group.
+description: Interfaces that stay fast and accessible as they grow.
+
+# Iconify `logos` slugs WITHOUT the `logos:` prefix — `vue` renders `i-logos-vue`.
+# Browse the available slugs at https://icones.js.org/collection/logos
+# Unknown slugs are skipped silently instead of breaking the build.
+icons:
+  - typescript
+  - vue
+  - nuxt
+  - tailwindcss
+  - vitejs

@@ -1,0 +1,19 @@
+title: Desenvolvedor Full Stack Pleno
+
+company: DefSafe
+
+employmentType: contract
+
+location: Remoto — Estados Unidos
+
+description: |-
+  - Trabalhei com uma ampla gama de tecnologias, incluindo HTML, CSS, JavaScript, TypeScript, Vue.js, Pinia, Vite, Node.js, TailwindCSS, Nitro.js, Prisma, Supabase, PostgreSQL e diversos serviços AWS como SES, Lambda, Amplify, Cognito e CloudWatch.
+  - Desenvolvi novas funcionalidades e implementei correções na aplicação principal, trabalhando em estreita colaboração com o time de QA para garantir estabilidade e performance. Otimizei a aplicação com Pinia, melhorei a renderização de componentes por meio dos modos de renderização do NuxtJS e contribuí ativamente para discussões técnicas.
+  - Implementei autenticação social via AWS Cognito, integrando provedores OIDC como Google, LinkedIn e Microsoft Azure (Outlook), entregando uma experiência de login mais fluida e segura.
+  - Desenvolvi autenticação corporativa Single Sign-On (SSO) usando o protocolo SAML, habilitando integração com Google Workspaces e Microsoft Entra ID (antigo Azure AD) para facilitar logins empresariais e garantir conformidade com padrões de segurança.
+
+startDate: '2024-03'
+
+endDate: '2024-05'
+
+translated: true

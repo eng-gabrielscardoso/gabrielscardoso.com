@@ -1,0 +1,13 @@
+name: DevOps
+
+description: Programmers must be able to deploy their code (unfortunately).
+
+icons:
+  - aws
+  - gcp
+  - vercel-icon
+  - netlify-icon
+  - github-actions
+  - docker-icon
+  - terraform-icon
+  - ansible

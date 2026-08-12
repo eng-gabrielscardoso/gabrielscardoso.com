@@ -1,0 +1,23 @@
+title: Engenheiro de Software Pleno
+
+company: Merchion
+
+employmentType: contract
+
+location: Remoto — Brasil
+
+description: |-
+  - Arquitetei e modernizei infraestruturas complexas, migrando sistemas legados para arquiteturas de microserviços escaláveis para clientes como Perto e Zuki.
+  - Liderei o desenvolvimento frontend full-lifecycle em diversos frameworks, incluindo Angular, React (Next.js) e Vue (Nuxt.js), utilizando Vite, Pinia e TailwindCSS para entregar interfaces de alta performance.
+  - Desenvolvi serviços backend robustos com abordagem poliglota em Go (Golang), Java (17/21/23) com Spring Boot e NestJS, garantindo alta disponibilidade e resiliência do sistema.
+  - Orquestrei ambientes containerizados com Docker e Docker Swarm, gerenciando service discovery e deploy por meio de NGINX e mensageria assíncrona com RabbitMQ.
+  - Implementei soluções cloud escaláveis na AWS, utilizando EC2, Lambda, RDS e Cognito para construir aplicações seguras, serverless e orientadas a eventos.
+  - Simplifiquei fluxos de desenvolvimento fornecendo consultoria especializada e mapeamento de processos, garantindo que especificações técnicas estivessem alinhadas aos objetivos de negócio.
+  - Projetei e apliquei rotinas rigorosas de conformidade e testes, estabelecendo regulamentos internos e padrões de documentação que melhoraram a qualidade do produto e a eficiência do time.
+  - Gerenciei ambientes diversos de banco de dados, otimizando PostgreSQL, MySQL e Redis para processamento de dados em larga escala e cache em tempo real.
+
+startDate: '2025-03'
+
+endDate: '2025-08'
+
+translated: true

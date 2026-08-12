@@ -1,0 +1,36 @@
+# Modelo — copie, renomeie (ex.: `senior-engineer.yml`) e preencha.
+# Arquivos que começam com `_` nunca são indexados, então este aqui não vai para o site.
+# Use o MESMO nome de arquivo usado em `content/en/experiences/`.
+#
+# Renderizado como item da timeline em `/pt/about`, ordenado por `startDate`.
+
+# Cargo.
+title: Engenheiro de Software Sênior
+
+# Nome da empresa ou cliente.
+company: Acme Inc.
+
+# Um de: full_time | part_time | self_employed | freelance | contract
+#        indirect_contract | internship | apprenticeship | volunteer
+# (os valores são fixos e ficam em inglês — a tradução é feita pela interface)
+employmentType: full_time
+
+# Texto livre — cidade, país ou "Remoto".
+location: Remoto — Brasil
+
+# Aceita Markdown (listas, negrito, links).
+description: |-
+  Liderei a migração de um monolito legado para serviços modulares, reduzindo o tempo de deploy em 70%.
+
+  - Responsável pelo design system usado por quatro times de produto
+  - Implantei testes end-to-end, cortando regressões pela metade
+  - Mentorei três pessoas em início de carreira
+
+# Sempre use aspas nas datas. Formato: "YYYY-MM".
+startDate: '2024-01'
+
+# Apague esta linha se o cargo for atual — a interface mostra "Atual".
+endDate: '2025-06'
+
+# Opcional — marca este arquivo como tradução do original em inglês.
+translated: true

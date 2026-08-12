@@ -1,0 +1,30 @@
+# Template — copy it, rename it (e.g. `open-source.yml`) and fill it in.
+# Files starting with `_` are never indexed, so this file never reaches the site.
+# Create the matching file in `content/pt/volunteering/` using the SAME filename.
+#
+# Rendered as a timeline entry on `/about`.
+
+# What you did.
+role: Maintainer
+
+# Organisation, project or community name.
+organisation: Open Source Community
+
+# One of: animal_welfare | arts_and_culture | children | civil_rights
+#         economic_empowerment | education | environment | health
+#         human_rights | politics | poverty_alleviation
+#         science_and_technology | social_services | veterans | other
+cause: science_and_technology
+
+# Markdown is supported.
+description: |-
+  Reviewed community pull requests and wrote the getting-started guide.
+
+  - Triaged roughly 200 issues
+  - Ran monthly onboarding calls for new contributors
+
+# Always quote dates. Format: "YYYY-MM".
+startDate: '2022-03'
+
+# Delete this line entirely if the work is ongoing.
+endDate: '2024-08'

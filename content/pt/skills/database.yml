@@ -1,0 +1,14 @@
+name: Banco de Dados
+
+description: Algumas das tecnologias com as quais já trabalhei.
+
+icons:
+  - mysql-icon
+  - postgresql
+  - mongodb-icon
+  - redis
+  - sqlite
+  - supabase-icon
+  - prisma
+
+translated: true

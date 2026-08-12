@@ -1,0 +1,13 @@
+name: Frontend
+
+description: My mind could be craved in backend, but my heart always goes where I have started.
+
+icons:
+  - vue
+  - nuxt-icon
+  - react
+  - nextjs-icon
+  - angular-icon
+  - svelte-icon
+  - tailwindcss-icon
+  - htmx-icon

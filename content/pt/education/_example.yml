@@ -1,0 +1,32 @@
+# Modelo — copie, renomeie (ex.: `computer-science.yml`) e preencha.
+# Arquivos que começam com `_` nunca são indexados, então este aqui não vai para o site.
+# Use o MESMO nome de arquivo usado em `content/en/education/`.
+#
+# Renderizado como item da timeline em `/pt/about`. O título fica "{degree} in {course}".
+
+# Nível da formação, ex.: Bacharelado, Mestrado, Tecnólogo, Técnico.
+degree: Bacharelado
+
+# Nome do curso.
+course: Ciência da Computação
+
+# Opcional — área de especialização. Apague se não se aplica.
+fieldOfStudy: Sistemas Distribuídos
+
+# Nome da instituição.
+school: Universidade Federal do Pará
+
+# Aceita Markdown.
+description: |-
+  Foco em sistemas distribuídos e compiladores, com pesquisa em algoritmos de escalonamento.
+
+  Trabalho de conclusão: um analisador estático para detectar condições de corrida em Go.
+
+# Sempre use aspas nas datas. Formato: "YYYY-MM".
+startDate: '2019-02'
+
+# Apague esta linha se o curso estiver em andamento.
+endDate: '2023-12'
+
+# Opcional — marca este arquivo como tradução do original em inglês.
+translated: true

@@ -1,0 +1,22 @@
+title: Engenheiro de Software Pleno
+
+company: Fone Ninja
+
+employmentType: contract
+
+location: Remoto — Brasil
+
+description: |-
+  - Trabalhei com um conjunto abrangente de tecnologias, incluindo HTML, CSS, JavaScript, TypeScript, Vue.js, Pinia, Vite, PrimeVue, PrimeFaces, PrimeFlex, TailwindCSS, Laravel, PHP, Docker, MySQL, NGINX, Redis e pacotes Spatie. Também utilizei serviços AWS como EC2, RDS, SES, CloudWatch e SNS.
+  - Fui responsável pelo desenvolvimento do módulo de pagamentos e assinaturas, integrando Stripe como gateway de pagamento e permitindo a customização dos planos de assinatura da Fone Ninja, oferecendo maior flexibilidade para os clientes.
+  - Contribuí para a implementação de novas funcionalidades e melhorias em diversos módulos, incluindo Assistência Técnica, Vendas, Compras, Dashboard, Configuração e Relatórios.
+  - Assumi a liderança do módulo de Assistência Técnica, atuando como desenvolvedor e Product Owner. Participei de decisões técnicas, liderança de produto e reuniões estratégicas com clientes, stakeholders, parceiros e outros desenvolvedores.
+  - Implementei funcionalidades-chave no módulo de Assistência Técnica, como melhorias em Ordens de Serviço, gestão de Serviços prestados pelas lojas, criação de checklists eletrônicos e desenvolvimento de um Kanban customizável para visualização de Ordens de Serviço.
+  - Liderei a refatoração de UI/UX de páginas críticas, incluindo Compras, Vendas, Produtos e Dashboard, além de otimizações de performance para melhorar a experiência geral do usuário.
+  - Desenvolvi integrações com serviços de terceiros, incluindo Stripe (pagamentos), PlugSign (assinaturas eletrônicas), ClickUp e diversas ferramentas CMS, simplificando a integração de serviços usados pelos clientes.
+
+startDate: '2024-05'
+
+endDate: '2025-04'
+
+translated: true

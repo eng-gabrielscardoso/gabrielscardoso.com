@@ -1,0 +1,15 @@
+name: Frontend
+
+description: Minha mente pode ser backend, mas meu coração sempre volta para onde comecei.
+
+icons:
+  - vue
+  - nuxt-icon
+  - react
+  - nextjs-icon
+  - angular-icon
+  - svelte-icon
+  - tailwindcss-icon
+  - htmx-icon
+
+translated: true

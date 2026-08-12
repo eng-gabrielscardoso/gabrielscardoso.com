@@ -1,0 +1,34 @@
+# Modelo — copie, renomeie (ex.: `open-source.yml`) e preencha.
+# Arquivos que começam com `_` nunca são indexados, então este aqui não vai para o site.
+# Use o MESMO nome de arquivo usado em `content/en/volunteering/`.
+#
+# Renderizado como item da timeline em `/pt/about`.
+
+# O que você fez.
+role: Mantenedor
+
+# Nome da organização, projeto ou comunidade.
+organisation: Comunidade Open Source
+
+# Um de: animal_welfare | arts_and_culture | children | civil_rights
+#        economic_empowerment | education | environment | health
+#        human_rights | politics | poverty_alleviation
+#        science_and_technology | social_services | veterans | other
+# (os valores são fixos e ficam em inglês — a tradução é feita pela interface)
+cause: science_and_technology
+
+# Aceita Markdown.
+description: |-
+  Revisei pull requests da comunidade e escrevi o guia de primeiros passos.
+
+  - Triei cerca de 200 issues
+  - Conduzi calls mensais de onboarding para novos contribuidores
+
+# Sempre use aspas nas datas. Formato: "YYYY-MM".
+startDate: '2022-03'
+
+# Apague esta linha se o trabalho estiver em andamento.
+endDate: '2024-08'
+
+# Opcional — marca este arquivo como tradução do original em inglês.
+translated: true

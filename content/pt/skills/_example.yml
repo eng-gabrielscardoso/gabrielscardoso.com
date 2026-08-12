@@ -1,0 +1,24 @@
+# Modelo — copie, renomeie (ex.: `frontend.yml`) e preencha.
+# Arquivos que começam com `_` nunca são indexados, então este aqui não vai para o site.
+# Use o MESMO nome de arquivo usado em `content/en/skills/`.
+#
+# Renderizado como card na seção "Habilidades e Interesses" da home.
+
+# Nome do grupo, exibido como título do card.
+name: Frontend
+
+# Uma ou duas frases descrevendo o grupo.
+description: Interfaces que continuam rápidas e acessíveis conforme crescem.
+
+# Slugs do Iconify `logos` SEM o prefixo `logos:` — `vue` renderiza `i-logos-vue`.
+# Consulte os slugs disponíveis em https://icones.js.org/collection/logos
+# Slugs desconhecidos são ignorados silenciosamente, sem quebrar o build.
+icons:
+  - typescript
+  - vue
+  - nuxt
+  - tailwindcss
+  - vitejs
+
+# Opcional — marca este arquivo como tradução do original em inglês.
+translated: true

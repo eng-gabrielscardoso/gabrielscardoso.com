@@ -1,0 +1,29 @@
+# Template — copy it, rename it (e.g. `computer-science.yml`) and fill it in.
+# Files starting with `_` are never indexed, so this file never reaches the site.
+# Create the matching file in `content/pt/education/` using the SAME filename.
+#
+# Rendered as a timeline entry on `/about`. The heading becomes "{degree} in {course}".
+
+# Qualification level, e.g. Bachelor, Master, Technologist, Technical.
+degree: Bachelor
+
+# Programme name.
+course: Computer Science
+
+# Optional — narrower specialisation. Delete if not relevant.
+fieldOfStudy: Distributed Systems
+
+# Institution name.
+school: Federal University of Pará
+
+# Markdown is supported.
+description: |-
+  Focused on distributed systems and compilers, with research on scheduling algorithms.
+
+  Final project: a static analyser for detecting race conditions in Go.
+
+# Always quote dates. Format: "YYYY-MM".
+startDate: '2019-02'
+
+# Delete this line entirely if you are still enrolled.
+endDate: '2023-12'

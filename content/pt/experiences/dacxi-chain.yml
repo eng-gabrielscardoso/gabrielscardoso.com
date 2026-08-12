@@ -1,0 +1,23 @@
+title: Desenvolvedor Full Stack
+
+company: Dacxi Chain
+
+employmentType: contract
+
+location: Remoto — Austrália
+
+description: |-
+  - Trabalhei com um conjunto abrangente de tecnologias, incluindo HTML, CSS, TypeScript, Vue.js, Pinia, Vite, Node.js, TailwindCSS, Playwright, Jest, Vue Test Utils, Laravel, PHP, Docker, MySQL, Redis, Laravel Nova, Laravel Vapor, Laravel Pint, Pest e GitHub, além de serviços de cloud como DigitalOcean Droplets, AWS S3, SES, SNS e Amplify.
+  - Fui responsável pelo prototipagem inicial do MVP da Dacxi Chain, usando Go para a API interna integrada a smart contracts em Solidity, NestJS para a API pública e operações REST, e Svelte com Firebase para o frontend.
+  - Após a fase de MVP, contribuí para o desenvolvimento da aplicação principal com Vue.js e Laravel, atuando tanto na API REST quanto no frontend, além de manter a documentação pública com OpenAPI.
+  - Desenvolvi componentes, páginas e fluxos de usuário seguindo o design system da aplicação, priorizando acessibilidade, performance e experiência do usuário.
+  - Implementei o painel administrativo com Laravel Nova, desenvolvendo operações-chave para apoiar o time de operações na manutenção e gestão da aplicação.
+  - Tive papel central na integração de um pipeline de CI/CD com GitHub Actions, AWS (produção) e DigitalOcean (staging), garantindo um processo ágil de desenvolvimento e entrega contínua de novas funcionalidades e correções.
+  - Desenvolvi testes unitários, de integração e end-to-end (E2E) para a aplicação web e a API REST, garantindo alta cobertura e prevenindo regressões.
+  - Participei ativamente de reuniões e discussões técnicas, especialmente na fase inicial do projeto, ajudando a definir a arquitetura e garantir a entrega bem-sucedida do produto final.
+
+startDate: '2023-01'
+
+endDate: '2024-04'
+
+translated: true

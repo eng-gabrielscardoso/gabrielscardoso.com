@@ -1,0 +1,32 @@
+# Template — copy it, rename it (e.g. `senior-engineer.yml`) and fill it in.
+# Files starting with `_` are never indexed, so this file never reaches the site.
+# Create the matching file in `content/pt/experiences/` using the SAME filename.
+#
+# Rendered as a timeline entry on `/about`, sorted by `startDate`.
+
+# Job title.
+title: Senior Software Engineer
+
+# Employer or client name.
+company: Acme Inc.
+
+# One of: full_time | part_time | self_employed | freelance | contract
+#         indirect_contract | internship | apprenticeship | volunteer
+employmentType: full_time
+
+# Free text — city, country, or "Remote".
+location: Remote — Brazil
+
+# Markdown is supported (lists, bold, links).
+description: |-
+  Led the migration of a legacy monolith into modular services, cutting deploy time by 70%.
+
+  - Owned the design system used by four product teams
+  - Introduced end-to-end testing, dropping regressions by half
+  - Mentored three junior engineers
+
+# Always quote dates. Format: "YYYY-MM".
+startDate: '2024-01'
+
+# Delete this line entirely for a role you still hold — the UI shows "Present".
+endDate: '2025-06'

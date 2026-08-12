@@ -1,0 +1,21 @@
+title: Mid-Level Software Engineer
+
+company: Merchion
+
+employmentType: contract
+
+location: Remote — Brazil
+
+description: |-
+  - Architected and modernised complex infrastructures, transitioning legacy systems into scalable microservices architectures for major clients such as Perto and Zuki.
+  - Led full-lifecycle frontend development across diverse frameworks including Angular, React (Next.js), and Vue (Nuxt.js), leveraging Vite, Pinia, and TailwindCSS to deliver high-performance user interfaces.
+  - Engineered robust backend services using a polyglot approach with Go (Golang), Java (17/21/23) with Spring Boot, and NestJS, ensuring high availability and system resilience.
+  - Orchestrated containerised environments using Docker and Docker Swarm, managing service discovery and deployment through NGINX and asynchronous messaging with RabbitMQ.
+  - Implemented scalable cloud solutions on AWS, utilising EC2, Lambda, RDS, and Cognito to build secure, serverless, and event-driven applications.
+  - Streamlined development workflows by providing expert consultancy and process mapping, ensuring technical specifications were perfectly aligned with business objectives.
+  - Designed and enforced rigorous compliance and testing routines, establishing internal regulations and documentation standards that improved product quality and team efficiency.
+  - Managed diverse database environments, optimising PostgreSQL, MySQL, and Redis for large-scale data processing and real-time caching.
+
+startDate: '2025-03'
+
+endDate: '2025-08'
