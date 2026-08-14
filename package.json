@@ -66,7 +66,7 @@
     "pdf-lib": "1.17.1",
     "resend": "^6.19.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vue": "^3.5.41",
     "vue-router": "^5.2.0",
     "zod": "^4.4.3"
