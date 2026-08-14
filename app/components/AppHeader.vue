@@ -13,14 +13,18 @@ const navItems = computed(() => [
   { label: t('nav.contact'), to: localePath('/contact'), icon: 'i-lucide-mail' },
 ])
 
-const documentItems = computed(() =>
-  siteConfig.documents.map((document) => ({
+/** Documents get their own group, highlighted in the primary colour: they are what recruiters open. */
+const documentItems = computed(() => [
+  { label: t('nav.documents'), type: 'label' as const },
+  ...siteConfig.documents.map((document) => ({
     label: t(document.labelKey),
     icon: document.icon,
-    href: document.href,
-    target: '_blank' as const,
+    color: 'primary' as const,
+    ...(document.to
+      ? { to: localePath(document.to) }
+      : { href: document.href, target: '_blank' as const }),
   })),
-)
+])
 
 const menuItems = computed(() => [
   navItems.value.map((item) => ({ label: item.label, icon: item.icon, to: item.to })),
@@ -44,7 +48,7 @@ const localeItems = computed(() => [
 
 <template>
   <header
-    class="fixed inset-x-0 top-0 z-50 border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur-md"
+    class="fixed inset-x-0 top-0 z-50 border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur-md print:hidden"
   >
     <UContainer class="flex h-16 items-center justify-between">
       <div class="flex items-center gap-1">

@@ -2,10 +2,11 @@ import { DEFAULT_LOCALE, getCollectionName } from '#shared/utils'
 import type { SupportedLocale } from '#shared/utils'
 import type { Collections } from '@nuxt/content'
 import type { z } from 'zod'
-import type { blogSchema, projectSchema } from '#shared/content-schemas'
+import type { blogSchema, documentSchema, projectSchema } from '#shared/content-schemas'
 
 export type BlogPost = z.infer<typeof blogSchema> & { path: string }
 export type ProjectPage = z.infer<typeof projectSchema> & { path: string; description?: string }
+export type DocumentPage = z.infer<typeof documentSchema> & { path: string }
 
 export type Profile = {
   headline: string

@@ -1,10 +1,20 @@
 <script setup lang="ts">
-import { getDocument, getFeaturedSocials } from '#shared/site.config'
+import { getFeaturedSocials, siteConfig } from '#shared/site.config'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 const featuredSocials = getFeaturedSocials()
-const cv = getDocument('cv')
+
+const documents = computed(() =>
+  siteConfig.documents.map((document) => ({
+    id: document.id,
+    label: t(document.labelKey),
+    icon: document.icon,
+    to: document.to ? localePath(document.to) : document.href,
+    external: !document.to,
+  })),
+)
 
 useSeoMeta({
   title: t('contact.title'),
@@ -34,14 +44,16 @@ useSeoMeta({
         </UButton>
 
         <UButton
-          v-if="cv"
-          :to="cv.href"
-          target="_blank"
-          :icon="cv.icon"
-          color="neutral"
+          v-for="document in documents"
+          :key="document.id"
+          :to="document.to"
+          :target="document.external ? '_blank' : undefined"
+          :icon="document.icon"
+          :trailing-icon="document.external ? 'i-lucide-external-link' : undefined"
+          color="primary"
           variant="soft"
         >
-          {{ t(cv.labelKey) }}
+          {{ document.label }}
         </UButton>
       </div>
 

@@ -4,6 +4,7 @@ import { z } from 'zod'
 import type { ZodObject, ZodRawShape, ZodTypeAny } from 'zod'
 import {
   blogSchema,
+  documentSchema,
   educationSchema,
   experienceSchema,
   profileSchema,
@@ -22,27 +23,35 @@ function defineLocaleCollections(
   name: string,
   type: 'page' | 'data',
   schema: ZodObject<ZodRawShape>,
+  options?: {
+    /** Folder under `content/{locale}/` when it differs from the collection name. */
+    sourceDir?: string
+    /** Public path prefix (without locale), e.g. `/cover-letter`. Defaults to `/${name}`. */
+    routePrefix?: string
+  },
 ) {
   // The `sitemap` schema field is what registers a page collection with @nuxtjs/sitemap.
   const collectionSchema =
     type === 'page' ? schema.extend({ sitemap: defineSitemapSchema({ z }) }) : schema
+  const sourceDir = options?.sourceDir ?? name
+  const routePrefix = options?.routePrefix ?? `/${name}`
 
   return {
     [`${name}_en`]: defineCollection({
       type,
       source: {
-        include: `en/${name}/**`,
+        include: `en/${sourceDir}/**`,
         exclude: excludedSources,
-        prefix: type === 'page' ? `/${name === 'blog' ? 'blog' : 'projects'}` : undefined,
+        prefix: type === 'page' ? routePrefix : undefined,
       },
       schema: collectionSchema,
     }),
     [`${name}_pt`]: defineCollection({
       type,
       source: {
-        include: `pt/${name}/**`,
+        include: `pt/${sourceDir}/**`,
         exclude: excludedSources,
-        prefix: type === 'page' ? `/pt/${name === 'blog' ? 'blog' : 'projects'}` : undefined,
+        prefix: type === 'page' ? `/pt${routePrefix}` : undefined,
       },
       schema: collectionSchema,
     }),
@@ -98,5 +107,12 @@ export default defineContentConfig({
     ...defineDataCollections('skills', skillSchema),
     ...defineDataCollections('volunteering', volunteeringSchema),
     ...defineLocaleCollections('blog', 'page', blogSchema),
+    // A single `index.md` per locale, so the collection resolves to `/cv` and `/pt/cv`.
+    ...defineLocaleCollections('cv', 'page', documentSchema),
+    // Collection name must be a JS identifier; the public path stays kebab-case.
+    ...defineLocaleCollections('coverLetter', 'page', documentSchema, {
+      sourceDir: 'cover-letter',
+      routePrefix: '/cover-letter',
+    }),
   },
 })

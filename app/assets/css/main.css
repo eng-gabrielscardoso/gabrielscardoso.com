@@ -51,3 +51,97 @@ body {
 .glass {
   @apply border border-neutral-800/80 bg-neutral-900/50 backdrop-blur-md;
 }
+
+/* Prose renders CV contact details as links; the default is too dim against the document card. */
+.cv-document :where(a),
+.letter-document :where(a) {
+  @apply text-green-400 no-underline transition-colors hover:text-green-300 hover:underline;
+}
+
+.cv-document :where(h1, h2, h3) :where(a),
+.letter-document :where(h1, h2, h3) :where(a) {
+  @apply text-inherit no-underline;
+}
+
+/* Cover letter reads as a letter on screen: larger type, more air, a green rule under the header. */
+.letter-prose {
+  @apply text-base leading-7;
+}
+
+.letter-prose :where(h1) {
+  @apply mb-2 text-3xl tracking-tight sm:text-4xl;
+}
+
+.letter-prose :where(h1 + p) {
+  @apply mt-0 text-base font-semibold text-green-400;
+}
+
+.letter-prose :where(h2) {
+  @apply mt-10 mb-4 border-b border-neutral-700 pb-2 text-sm font-semibold tracking-wide text-neutral-200;
+}
+
+.letter-prose :where(p) {
+  @apply my-5;
+}
+
+.letter-prose :where(ul) {
+  @apply my-5 space-y-2;
+}
+
+/**
+ * The downloadable CV is typeset on the server (`server/utils/document-pdf.ts`) precisely because
+ * print output is browser specific — line breaks, scaling and the header the browser stamps on the
+ * page are all out of our hands. Printing the page is therefore only a fallback, and this does the
+ * minimum to keep it readable: no dark theme, no site chrome.
+ */
+@media print {
+  @page {
+    margin: 14mm 15mm;
+  }
+
+  body {
+    background: #fff;
+    color: #111827;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .page-ambient {
+    background: none;
+  }
+
+  .cv-document,
+  .cv-document :where(*),
+  .letter-document,
+  .letter-document :where(*) {
+    color: #111827;
+    background: none;
+    box-shadow: none;
+  }
+
+  /* The card styling is unlayered, so `print:` utilities cannot switch it off from the template. */
+  .cv-document,
+  .letter-document {
+    border: 0;
+    backdrop-filter: none;
+  }
+
+  .cv-document :where(a),
+  .letter-document :where(a) {
+    color: #111827;
+    text-decoration: underline;
+  }
+
+  /* Keep a role heading with the bullets that describe it. */
+  .cv-document :where(h1, h2, h3),
+  .letter-document :where(h1, h2, h3) {
+    break-after: avoid;
+  }
+
+  .cv-document :where(h1, h2, h3) :where(a),
+  .letter-document :where(h1, h2, h3) :where(a) {
+    text-decoration: none;
+  }
+}

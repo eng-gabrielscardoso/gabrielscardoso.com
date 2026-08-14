@@ -21,7 +21,10 @@ export interface SiteDocument {
   /** i18n key resolved at render time, e.g. `nav.cv`. */
   labelKey: string
   icon: string
-  href: string
+  /** Internal route for documents rendered by this site; the locale prefix is added at render time. */
+  to?: string
+  /** External URL, for documents that are not (yet) part of the content. */
+  href?: string
 }
 
 export interface SiteDonation {
@@ -96,15 +99,17 @@ export const siteConfig = {
       id: 'coverLetter',
       labelKey: 'nav.coverLetter',
       icon: 'i-lucide-file-text',
-      href: 'https://docs.google.com/document/d/1EvVSbMeTdvUtCpKST2wvGxHHWQGqKc-jENxbGqKA1j4',
+      // Rendered from `content/{en,pt}/cover-letter/index.md`.
+      to: '/cover-letter',
     },
     {
       id: 'cv',
       labelKey: 'nav.cv',
       icon: 'i-lucide-id-card',
-      href: 'https://docs.google.com/document/d/1k-huyj7Ao5NEy0reBUe9AI8PXiiT-w4Z5NsdiJkEIrg',
+      // Rendered from `content/{en,pt}/cv/index.md`.
+      to: '/cv',
     },
-  ] satisfies SiteDocument[],
+  ] as SiteDocument[],
 
   /** Leave empty to hide the support button entirely. */
   donations: [

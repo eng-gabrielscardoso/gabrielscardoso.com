@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="border-t border-neutral-800/80 bg-neutral-950">
+  <footer class="border-t border-neutral-800/80 bg-neutral-950 print:hidden">
     <UContainer class="py-12">
       <div class="grid gap-8 md:grid-cols-3">
         <div>

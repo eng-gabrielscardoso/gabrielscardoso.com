@@ -9,7 +9,24 @@ export const LOCALE_LANGUAGE_TAGS: Record<SupportedLocale, string> = {
 }
 
 export type CollectionBase =
-  'profile' | 'projects' | 'experiences' | 'education' | 'skills' | 'volunteering' | 'blog'
+  | 'profile'
+  | 'projects'
+  | 'experiences'
+  | 'education'
+  | 'skills'
+  | 'volunteering'
+  | 'blog'
+  | 'cv'
+  | 'coverLetter'
+
+/**
+ * URL slug for a document collection. Collection names must be JS identifiers (no hyphens),
+ * but public routes stay kebab-case.
+ */
+export function documentRouteSlug(base: CollectionBase): string {
+  if (base === 'coverLetter') return 'cover-letter'
+  return base
+}
 
 export function getCollectionName(base: CollectionBase, locale: SupportedLocale): string {
   return `${base}_${locale}`
@@ -73,6 +90,23 @@ export function sortByRecency<T extends DatedEntry>(items: T[]): T[] {
 
 export function gravatarUrl(hash: string, size = 350): string {
   return `https://gravatar.com/avatar/${hash}?size=${size}`
+}
+
+/**
+ * Removes the leading YAML front matter block so a downloaded Markdown file is the document
+ * itself, without the metadata the site needs to render it.
+ */
+export function stripFrontmatter(markdown: string): string {
+  return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---[^\S\r\n]*\r?\n?/, '').trimStart()
+}
+
+/**
+ * Route of the server-generated PDF for a document, mirroring the i18n `prefix_except_default`
+ * strategy so `/cv.pdf` and `/pt/cv.pdf` line up with `/cv` and `/pt/cv`.
+ */
+export function documentPdfPath(base: CollectionBase, locale: SupportedLocale): string {
+  const slug = documentRouteSlug(base)
+  return locale === DEFAULT_LOCALE ? `/${slug}.pdf` : `/${locale}/${slug}.pdf`
 }
 
 export function slugify(text: string): string {

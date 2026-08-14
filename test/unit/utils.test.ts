@@ -10,6 +10,8 @@ import {
   isActive,
   slugify,
   sortByRecency,
+  documentPdfPath,
+  stripFrontmatter,
   stripLocalePrefix,
 } from '#shared/utils'
 
@@ -54,6 +56,46 @@ describe('shared utils', () => {
   it('strips the portuguese URL prefix for fallback paths', () => {
     expect(stripLocalePrefix('/pt/blog/post')).toBe('/blog/post')
     expect(stripLocalePrefix('/blog/post')).toBe('/blog/post')
+  })
+
+  describe('stripFrontmatter', () => {
+    it('removes the leading front matter block', () => {
+      const markdown = [
+        '---',
+        'title: Curriculum vitae',
+        "updatedAt: '2026-08'",
+        '---',
+        '',
+        '# Name',
+        '',
+        'Summary.',
+      ].join('\n')
+
+      expect(stripFrontmatter(markdown)).toBe('# Name\n\nSummary.')
+    })
+
+    it('handles carriage returns', () => {
+      expect(stripFrontmatter('---\r\ntitle: CV\r\n---\r\n\r\n# Name')).toBe('# Name')
+    })
+
+    it('leaves documents without front matter untouched', () => {
+      expect(stripFrontmatter('# Name\n\nSummary.')).toBe('# Name\n\nSummary.')
+    })
+
+    it('keeps horizontal rules inside the document', () => {
+      const markdown = '---\ntitle: CV\n---\n\n# Name\n\n---\n\nMore.'
+
+      expect(stripFrontmatter(markdown)).toBe('# Name\n\n---\n\nMore.')
+    })
+  })
+
+  describe('documentPdfPath', () => {
+    it('omits the default locale prefix and keeps it for Portuguese', () => {
+      expect(documentPdfPath('cv', 'en')).toBe('/cv.pdf')
+      expect(documentPdfPath('cv', 'pt')).toBe('/pt/cv.pdf')
+      expect(documentPdfPath('coverLetter', 'en')).toBe('/cover-letter.pdf')
+      expect(documentPdfPath('coverLetter', 'pt')).toBe('/pt/cover-letter.pdf')
+    })
   })
 
   describe('sortByRecency', () => {

@@ -108,3 +108,19 @@ export const blogSchema = z.object({
   tags: z.array(z.string()).optional(),
   translated: z.boolean().optional(),
 })
+
+/**
+ * Standalone documents (CV today, cover letter tomorrow): the Markdown body *is* the
+ * document, so the page renders it as-is instead of composing a layout around fields.
+ *
+ * Declaring `rawbody` makes @nuxt/content store the untouched Markdown source alongside
+ * the parsed tree, which is what the "download as Markdown" button hands over.
+ */
+export const documentSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  /** `YYYY-MM`, quoted — shown as "Updated Aug 2026". */
+  updatedAt: z.string(),
+  rawbody: z.string().optional(),
+  translated: z.boolean().optional(),
+})

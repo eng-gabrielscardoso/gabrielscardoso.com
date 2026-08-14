@@ -8,6 +8,7 @@
     "projects": "Projetos",
     "blog": "Blog",
     "contact": "Contato",
+    "documents": "Documentos",
     "coverLetter": "Carta de apresentação",
     "cv": "Currículo",
     "github": "Repositório GitHub",
@@ -65,6 +66,15 @@
     "success": "Mensagem enviada com sucesso! Responderei brevemente.",
     "error": "Falha ao enviar mensagem. Tenta novamente mais tarde.",
     "rateLimit": "Podes enviar uma mensagem por hora (o orçamento é limitado). Tenta novamente mais tarde."
+  },
+  "document": {
+    "updated": "Atualizado em {date}",
+    "downloadPdf": "PDF",
+    "downloadMarkdown": "Markdown",
+    "shareLink": "Partilhar",
+    "linkCopied": "Link copiado para a área de transferência",
+    "coverLetterHint": "Procurando a carta de apresentação?",
+    "cvHint": "Procurando o currículo?"
   },
   "support": {
     "button": "Paga-me um açaí",

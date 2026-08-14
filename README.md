@@ -14,16 +14,20 @@ Modern personal portfolio built with Nuxt 4, replacing the legacy Laravel/Livewi
 
 ## Pages
 
-| Route              | Description                                              |
-| ------------------ | -------------------------------------------------------- |
-| `/`                | Home — hero, skills, featured projects                   |
-| `/about`           | Biography, experience, education, volunteering timelines |
-| `/projects`        | Project grid with stats                                  |
-| `/projects/[slug]` | Project detail page                                      |
-| `/blog`            | Blog listing                                             |
-| `/blog/[slug]`     | Blog post                                                |
-| `/contact`         | Contact form + social links                              |
-| `/_studio`         | Nuxt Studio admin (production, requires GitHub OAuth)    |
+| Route               | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `/`                 | Home — hero, skills, featured projects                   |
+| `/about`            | Biography, experience, education, volunteering timelines |
+| `/projects`         | Project grid with stats                                  |
+| `/projects/[slug]`  | Project detail page                                      |
+| `/blog`             | Blog listing                                             |
+| `/blog/[slug]`      | Blog post                                                |
+| `/contact`          | Contact form + social links                              |
+| `/cv`               | Curriculum vitae, rendered from Markdown                 |
+| `/cv.pdf`           | The same CV, typeset as a PDF on the server              |
+| `/cover-letter`     | Cover letter, rendered from Markdown                     |
+| `/cover-letter.pdf` | The same cover letter, typeset as a PDF on the server    |
+| `/_studio`          | Nuxt Studio admin (production, requires GitHub OAuth)    |
 
 All routes are available in Portuguese under `/pt/*`.
 
@@ -33,15 +37,18 @@ The project is white-label: no personal data is hardcoded in components. To rebr
 
 **1. [`shared/site.config.ts`](shared/site.config.ts)** — every identity value lives here:
 
-| Field                           | What it controls                                                 |
-| ------------------------------- | ---------------------------------------------------------------- |
-| `name`, `shortName`, `nickname` | Footer/SEO name, header brand, highlighted word in the hero      |
-| `description`, `url`            | Default SEO metadata and canonical URL                           |
-| `avatar.gravatarHash`           | Hero and about-page avatar                                       |
-| `repository`                    | Header source link and Nuxt Studio commit target                 |
-| `socials[]`                     | Footer icons, and contact page buttons when `featured: true`     |
-| `documents[]`                   | CV / cover letter entries in the navigation menu                 |
-| `donations[]`                   | Support modal entries — leave the array empty to hide the button |
+| Field                           | What it controls                                                  |
+| ------------------------------- | ----------------------------------------------------------------- |
+| `name`, `shortName`, `nickname` | Footer/SEO name, header brand, highlighted word in the hero       |
+| `description`, `url`            | Default SEO metadata and canonical URL                            |
+| `avatar.gravatarHash`           | Hero and about-page avatar                                        |
+| `repository`                    | Header source link and Nuxt Studio commit target                  |
+| `socials[]`                     | Footer icons, and contact page buttons when `featured: true`      |
+| `documents[]`                   | CV / cover letter entries in the navigation menu and contact page |
+| `donations[]`                   | Support modal entries — leave the array empty to hide the button  |
+
+Each `documents[]` entry points either at a page of this site (`to: '/cv'`) or at an external file
+(`href: 'https://…'`, opened in a new tab with an external-link icon).
 
 **2. `content/{en,pt}/`** — localised copy: `profile.yml` (headline, location, biography) plus your `projects/`, `blog/`, `skills/`, `experiences/`, `education/` and `volunteering/` entries.
 
@@ -98,6 +105,43 @@ Every folder ships an annotated `_example` file documenting each field, its form
 Copy a template, rename it and fill it in. Files prefixed with `_` are excluded from indexing in [`content.config.ts`](content.config.ts), so the templates never appear on the site.
 
 Two gotchas worth repeating: **quote every date** (`'2025-01'`), otherwise YAML parses it into a `Date` and schema validation fails; and **delete `endDate`** entirely for anything ongoing so the UI renders "Present" instead.
+
+### Curriculum vitae and cover letter
+
+Both documents are Markdown like everything else:
+
+| Document     | Source                                  | Page / PDF                           |
+| ------------ | --------------------------------------- | ------------------------------------ |
+| CV           | `content/{en,pt}/cv/index.md`           | `/cv`, `/cv.pdf`                     |
+| Cover letter | `content/{en,pt}/cover-letter/index.md` | `/cover-letter`, `/cover-letter.pdf` |
+
+The front matter (`title`, `description`, `updatedAt`) exists only to render the page — the body _is_
+the document, so editing that file is editing the document, including through Nuxt Studio. Both pages
+share [`SiteDocumentView`](app/components/SiteDocumentView.vue) and the same three actions:
+
+| Action            | How it works                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| Download PDF      | Links to the matching `*.pdf` route, typeset on the server (see below)                |
+| Download Markdown | Serves the raw source, which @nuxt/content keeps in `rawbody`, minus the front matter |
+| Share link        | Native share sheet when the browser has one, otherwise copies the canonical URL       |
+
+#### The PDF
+
+Document PDFs are laid out page by page in
+[`server/utils/document-pdf.ts`](server/utils/document-pdf.ts) with `pdf-lib`, from the same Markdown
+the page renders. **The browser's print dialog is deliberately not involved:** every engine
+paginates and scales print stylesheets differently and stamps its own header, footer and page numbers
+on the result, so "save as PDF" produced a different — and longer — document for every visitor.
+
+How it works: [`shared/document-blocks.ts`](shared/document-blocks.ts) flattens the Markdown tree
+into blocks (title, section, entry, date, bullet, detail), and the renderer typesets those with the
+14 fonts every PDF viewer ships, so nothing has to be embedded. Dates are set on the same line as the
+role they belong to, headings are kept with the content under them, and links stay clickable.
+
+If the last page ends up nearly empty, the document is typeset again slightly tighter — leading and
+block spacing only, never font sizes — until it stops spilling. That keeps a CV at two full pages in
+both languages instead of trailing three lines onto a third, and it absorbs content edits on its own.
+An e2e test asserts the page count, so the sprawl cannot come back unnoticed.
 
 **Local editing:** Nuxt Studio shows a floating edit button in dev mode.
 

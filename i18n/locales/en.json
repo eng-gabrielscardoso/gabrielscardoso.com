@@ -8,6 +8,7 @@
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact",
+    "documents": "Documents",
     "coverLetter": "Cover letter",
     "cv": "Curriculum vitae",
     "github": "GitHub repository",
@@ -65,6 +66,15 @@
     "success": "Message sent successfully! I'll get back to you soon.",
     "error": "Failed to send message. Please try again later.",
     "rateLimit": "You can only send one message per hour (the budget is limited). Please try again later."
+  },
+  "document": {
+    "updated": "Updated {date}",
+    "downloadPdf": "PDF",
+    "downloadMarkdown": "Markdown",
+    "shareLink": "Share",
+    "linkCopied": "Link copied to your clipboard",
+    "coverLetterHint": "Looking for the cover letter instead?",
+    "cvHint": "Looking for the curriculum vitae instead?"
   },
   "support": {
     "button": "Buy me an açaí",
