@@ -85,7 +85,20 @@
     "bitcoinDesc": "O bom e velho BTC. Uma das últimas formas de mover valor sem pedir benção a banco — aquelas instituições lindas administradas por gente que venderia os próprios filhos por mais um zero na conta.",
     "ethereumDesc": "Ethereum: abriu portas para mil apps \"revolucionários\" que revolucionaram sobretudo a velocidade com que perdes dinheiro. Ainda assim, melhor que ver o real apodrecer na poupança.",
     "copyAddress": "Copiar endereço",
-    "copied": "Copiado!"
+    "copied": "Copiado!",
+    "amount": "Valor",
+    "connectWallet": "Conectar MetaMask",
+    "connecting": "A conectar...",
+    "send": "Enviar com MetaMask",
+    "sending": "À espera do MetaMask...",
+    "connectedAs": "Ligado como {account}",
+    "installMetaMask": "Instalar MetaMask",
+    "noWallet": "Nenhuma carteira Ethereum neste browser. Instala o MetaMask, ou copia o endereço e envia de onde guardas as moedas.",
+    "bitcoinHint": "Bitcoin continua a ser copiar e colar — MetaMask não fala BTC.",
+    "txSent": "Transação submetida. Açaí a caminho, capitalismo em processamento.",
+    "txRejected": "Transação cancelada.",
+    "invalidAmount": "Introduz um valor válido em ETH.",
+    "sendError": "O MetaMask não conseguiu enviar a transação. Tenta de novo, ou copia o endereço."
   },
   "footer": {
     "copyright": "Todos os direitos reservados.",

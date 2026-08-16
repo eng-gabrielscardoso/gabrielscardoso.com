@@ -35,6 +35,10 @@ export interface SiteDonation {
   descriptionKey: string
   icon: string
   address: string
+  /**
+   * How the visitor pays. MetaMask only speaks EVM, so Bitcoin stays on the clipboard.
+   */
+  method: 'copy' | 'metamask'
 }
 
 export interface SiteRepository {
@@ -119,6 +123,7 @@ export const siteConfig = {
       descriptionKey: 'support.bitcoinDesc',
       icon: 'i-lucide-bitcoin',
       address: 'bc1qahqnyd4pajevve8ksp45nh7c4zceymeg5lxq2z',
+      method: 'copy',
     },
     {
       id: 'ethereum',
@@ -126,6 +131,7 @@ export const siteConfig = {
       descriptionKey: 'support.ethereumDesc',
       icon: 'i-lucide-hexagon',
       address: '0xddf0d86f79007b1ab2b545b710126edb546c498a',
+      method: 'metamask',
     },
   ] satisfies SiteDonation[],
 }

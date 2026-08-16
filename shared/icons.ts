@@ -124,5 +124,7 @@ export const appIcons = [
   'lucide:bitcoin',
   'lucide:hexagon',
   'lucide:coins',
+  'lucide:wallet',
+  'logos:metamask-icon',
   ...skillLogoIcons,
 ] as const
