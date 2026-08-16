@@ -7,6 +7,13 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 10
+    ignore:
+      # @nuxt/ui@4 peers typescript ^5.6.3 || ^6.0.0 — TS 7 fails npm ci with ERESOLVE.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
+      # @nuxt/content@3 peers better-sqlite3 ^12.5.0 — 13.x fails npm ci with ERESOLVE.
+      - dependency-name: better-sqlite3
+        update-types: ['version-update:semver-major']
     groups:
       nuxt:
         patterns:
