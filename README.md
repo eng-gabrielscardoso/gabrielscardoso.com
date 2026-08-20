@@ -58,7 +58,7 @@ Then set your environment variables (see below) and update `package.json` `name`
 
 ## Getting Started
 
-Requires **Node.js 22.19+** (see `.nvmrc`). With [nvm](https://github.com/nvm-sh/nvm): `nvm use`.
+Requires **Node.js 24.19+** (see `.nvmrc`). With [nvm](https://github.com/nvm-sh/nvm): `nvm use`.
 
 ```bash
 npm ci
