@@ -80,9 +80,15 @@ async function sendDonation(to: string) {
       <span class="sr-only">{{ t('support.button') }}</span>
     </UButton>
 
-    <UModal v-model:open="isOpen">
+    <UModal v-model:open="isOpen" class="max-h-[85dvh]">
       <template #content>
-        <UCard>
+        <UCard
+          :ui="{
+            root: 'flex max-h-[85dvh] flex-col overflow-hidden',
+            header: 'shrink-0',
+            body: 'min-h-0 flex-1 overflow-y-auto overscroll-contain',
+          }"
+        >
           <template #header>
             <h2 class="text-lg font-semibold">{{ t('support.title') }}</h2>
           </template>
