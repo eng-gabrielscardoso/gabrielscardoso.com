@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     'motion-v/nuxt',
     'nuxt-studio',
+    'nuxt-security',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -98,6 +99,7 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
+      cookieSecure: true,
       redirectOn: 'root',
     },
   },
@@ -141,6 +143,38 @@ export default defineNuxtConfig({
     storage: {
       rateLimit: {
         driver: 'memory',
+      },
+    },
+  },
+
+  // Dev traffic (HMR, devtools, the @nuxt/icon API) burns through the
+  // default rate-limit budget of 150 requests per 5 minutes, after which
+  // every request 429s and SSR icon lookups start failing.
+  $development: {
+    security: {
+      rateLimiter: false,
+    },
+  },
+
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        // Fallback for every fetch directive not listed below (frame-src,
+        // worker-src, media-src, ...); without it those default to allow-all.
+        'default-src': ["'self'"],
+        // Analytics beacons (Clarity, GTM) post to third-party HTTPS hosts.
+        'connect-src': ["'self'", 'https:'],
+        'script-src': [
+          "'self'",
+          'https:',
+          "'unsafe-inline'",
+          "'strict-dynamic'",
+          "'nonce-{{nonce}}'",
+          // @nuxt/content v3 runs client-side queries on a WebAssembly
+          // SQLite database; without this every page 500s after hydration.
+          "'wasm-unsafe-eval'",
+        ],
+        'img-src': ["'self'", 'data:', 'https://gravatar.com', 'https://www.gravatar.com'],
       },
     },
   },

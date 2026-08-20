@@ -27,7 +27,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint:commit": "commitlint --from=origin/main --to=HEAD --verbose",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "security:headers": "uvx --from shcheck shcheck.py http://localhost:3000",
+    "security:secrets": "uvx detect-secrets scan",
+    "security:vulnerability": "uvx --with greenlet --from wapiti3 wapiti -u http://localhost:3000"
   },
   "dependencies": {
     "@iconify-json/logos": "^1.2.12",
@@ -64,6 +67,7 @@
     "eslint": "^10.8.1",
     "motion-v": "^2.3.0",
     "nuxt": "^4.5.2",
+    "nuxt-security": "2.6.0",
     "nuxt-studio": "^1.7.0",
     "pdf-lib": "1.17.1",
     "resend": "^6.19.0",
