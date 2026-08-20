@@ -50,8 +50,16 @@ async function onSubmit() {
     state.message = ''
     state.website = ''
   } catch (error: unknown) {
-    const fetchError = error as { data?: { message?: string; statusMessage?: string } }
-    const message = fetchError.data?.message || fetchError.data?.statusMessage || t('contact.error')
+    const fetchError = error as {
+      statusCode?: number
+      data?: { message?: string; statusMessage?: string }
+    }
+    const serverMessage = fetchError.data?.message || fetchError.data?.statusMessage
+    // 5xx messages describe internals (mail provider, configuration); show
+    // the localized generic error. 4xx messages (validation, rate limit)
+    // are written for the user.
+    const message =
+      (fetchError.statusCode ?? 500) >= 500 || !serverMessage ? t('contact.error') : serverMessage
 
     toast.add({
       title: message,

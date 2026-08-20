@@ -41,13 +41,23 @@ export default defineEventHandler(async (event) => {
 
   const { name, email, subject, message } = validation.data
 
-  await resend.emails.send({
+  // The Resend SDK reports API failures by resolving with `error` instead
+  // of throwing, and only logs them itself outside production.
+  const { error } = await resend.emails.send({
     from: `${siteConfig.name} <${config.contactFromEmail}>`,
     to: config.contactEmail,
     replyTo: email,
     subject: `[Portfolio] ${subject}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
   })
+
+  if (error) {
+    console.error('[contact] Resend send failed:', error)
+    throw createError({
+      statusCode: 502,
+      statusMessage: 'Email delivery failed',
+    })
+  }
 
   await storage.setItem(rateLimitKey, Date.now(), {
     ttl: config.contactRateLimitSeconds,
