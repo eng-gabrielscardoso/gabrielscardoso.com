@@ -33,7 +33,7 @@
     "security:vulnerability": "uvx --with greenlet --from wapiti3 wapiti -u http://localhost:3000"
   },
   "dependencies": {
-    "@iconify-json/logos": "^1.2.12",
+    "@iconify-json/logos": "^1.2.13",
     "@iconify-json/lucide": "^1.2.123",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/content": "^3.15.2",
