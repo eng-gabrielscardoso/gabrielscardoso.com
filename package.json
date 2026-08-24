@@ -64,7 +64,7 @@
     "@tiptap/suggestion": "^3.30.0",
     "@tiptap/vue-3": "^3.30.0",
     "better-sqlite3": "^12.11.1",
-    "eslint": "^10.8.1",
+    "eslint": "^10.9.0",
     "motion-v": "^2.3.0",
     "nuxt": "^4.5.2",
     "nuxt-security": "2.6.0",
