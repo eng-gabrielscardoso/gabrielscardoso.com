@@ -70,7 +70,7 @@
     "nuxt-security": "2.6.0",
     "nuxt-studio": "^1.7.0",
     "pdf-lib": "1.17.1",
-    "resend": "^6.19.0",
+    "resend": "^6.21.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vue": "^3.5.41",
