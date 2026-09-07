@@ -45,7 +45,7 @@
     "@nuxt/test-utils": "^4.1.0",
     "@nuxt/ui": "^4.10.0",
     "@nuxtjs/i18n": "^10.6.0",
-    "@nuxtjs/seo": "^5.3.12",
+    "@nuxtjs/seo": "^5.3.14",
     "@tiptap/core": "^3.30.0",
     "@tiptap/extension-bubble-menu": "^3.30.0",
     "@tiptap/extension-code": "^3.30.0",
